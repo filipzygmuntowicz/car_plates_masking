@@ -16,15 +16,9 @@ def blur(path_to_images, reader):
     how_many_scanned = 0
     how_many_to_scan = 0
     for path_to_image in images_files:
-        image_name = path_to_image[:path_to_image.find(".")]
-        if image_name.isnumeric():
-            how_many_to_scan += 1
+        how_many_to_scan += 1
     for path_to_image in images_files:
-        image_name = path_to_image[:path_to_image.find(".")]
-        if image_name.isnumeric():
-            how_many_scanned += 1
-        else:
-            continue
+        how_many_scanned += 1
         l_progress.config(
             text=(f"Photos scanned: {how_many_scanned}/{how_many_to_scan}" + "\n" + f"current directory: {path_to_images}"))
         root.update()
